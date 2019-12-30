@@ -9,6 +9,13 @@ describe("Probando promesas", () => {
             expect(response).toBeGreaterThan(0) 
             done()
         })
+    })
 
+    test("resuelve un hola", () => {
+        return expect(Promise.resolve('Hola')).resolves.toBe("Hola")
+    })
+
+    test("Rechaza con un error", () =>{
+        return expect(Promise.reject("Error")).rejects.toBe("Error")
     })
 }) 
